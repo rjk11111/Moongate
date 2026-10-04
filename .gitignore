@@ -1,0 +1,37 @@
+# Rust build output. Keep Cargo.lock (this is a binary) and .sqlx/ (offline query metadata).
+/target/
+
+# Secrets and key material: never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jwk
+/secrets/
+
+# AI assistant guidance, session state, and generated plans/specs
+CLAUDE.md
+CLAUDE.local.md
+AGENTS.md
+GEMINI.md
+.claude/
+.codex/
+.cursor/
+.gemini/
+.superpowers/
+docs/superpowers/
+docs/plans/
+docs/specs/
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Browser captures (contain credentials, tokens, cookies)
+*.har

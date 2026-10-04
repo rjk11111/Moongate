@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Enter Moongate{% endblock %}
+{% block content %}
+<h1>Enter Moongate</h1>
+<p>Destination: {{ client_name }}</p>
+{% if let Some(message) = error %}<p class="error" role="alert">{{ message }}</p>{% endif %}
+<form method="post" action="{{ action }}">
+  <input type="hidden" name="csrf" value="{{ csrf }}">
+  {% for (name, value) in fields %}<input type="hidden" name="{{ name }}" value="{{ value }}">
+  {% endfor %}
+  <label for="email">OutlandsID email</label>
+  <input id="email" name="email" type="email" autocomplete="username" required maxlength="254">
+  <label for="password">Password</label>
+  <input id="password" name="password" type="password" autocomplete="current-password" required maxlength="1024">
+  <button type="submit">Sign in with OutlandsID</button>
+</form>
+{% endblock %}
